@@ -6,4 +6,4 @@ ENV JDBC_PASSWORD=petclinic \
     JDBC_DRIVER_CLASS_NAME=com.mysql.jdbc.Driver \
     JPA_DATABASE=MYSQL \
     JDBC_USERNAME=root \
-    JDBC_URL=jdbc:mysql://mysql:3306/petclinic
+    JDBC_URL=jdbc:mysql://fefewfewfewffewfew:3306/petclinic
