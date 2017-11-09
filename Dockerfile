@@ -5,7 +5,6 @@ VOLUME $APP_HOME/.m2/repository
 COPY src/ $APP_HOME/src
 COPY pom.xml $APP_HOME/pom.xml
 RUN cd $APP_HOME && mvn clean package -DskipTests
-RUN ls $APP_HOME/target
 FROM jboss/wildfly:11.0.0.Final
 COPY --from=BUILD_IMAGE /root/target/petclinic.war /opt/jboss/wildfly/standalone/deployments/petclinic.war
 EXPOSE 8080
