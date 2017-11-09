@@ -1,5 +1,4 @@
 FROM jboss/wildfly:11.0.0.Final
-LABEL version = "1.1.3"
 COPY target/petclinic.war /opt/jboss/wildfly/standalone/deployments/petclinic.war
 ENV JDBC_PASSWORD=petclinic \
     DB_SCRIPT=mysql \
