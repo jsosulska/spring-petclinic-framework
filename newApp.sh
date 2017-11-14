@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-oc new-app -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=${newPassword} -e MYSQL_DATABASE=petclinic openshift/mysql-55-centos7
+oc new-app -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic openshift/mysql-55-centos7
 oc createSecret petclinc-secrets --from-
 
 
@@ -17,5 +17,7 @@ one button
 oc create configmap petclinic-db-config --from-literal=JDBC_URL=jdbc:mysql://mysql-55-centos7.myproject.svc:3306/petclinic --from-literal=JDBC_USERNAME=petclinic
 
 
-oc new-app stein321/petclinic:2.0.2
 oc expose svc petclinic
+
+
+oc new-app --image-stream=myproject/petclinic:2.0.3 --name=petclinic
