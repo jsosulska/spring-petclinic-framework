@@ -20,6 +20,15 @@ You can then access petclinic here: http://localhost:9966/petclinic/
 
 <img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
 
+
+## Running petclinic on Openshift
+In its default configuration, the openshift configurations will run against a local minishift instance. 
+
+1. Run update.sh to build petclinic and deploy the container to OCR.
+2. Run createAps.sh to spin up a mysql container and petclinic container with all the configurations for them to connect.
+3. Run deleteApps.sh to tear down the mysql instance and in openshift except the image streams.  
+ 
+
 ## In case you find a bug/suggested improvement for Spring Petclinic
 Our issue tracker is available here: https://github.com/spring-petclinic/spring-framework-petclinic/issues
 
