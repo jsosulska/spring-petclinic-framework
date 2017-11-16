@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 eval $(minishift oc-env)
+oc login -u developer -p $(oc whoami -t)
 
 APP_SVC_NAME=petclinic
 DB_SV_NAME=$APP_SVC_NAME-mysql
