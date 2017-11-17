@@ -10,7 +10,8 @@ pipeline {
         // Build Docker image
         stage('Build Docker Image') {
             steps {
-                openshiftBuild(bldCfg: 'spring-petclinic', showBuildLogs: 'true')
+                //openshiftBuild(bldCfg: 'spring-petclinic', showBuildLogs: 'true')
+                docker build .
             }
         }
         // push docker image to OCR with latest
