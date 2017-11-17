@@ -1,0 +1,6 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+    name: "petclinic-jboss-build"
+source:
+    dockerfile: "FROM jboss/wildfly:11.0.0.Final\nCOPY target/petclinic.war /opt/jboss/wildfly/standalone/deployments/petclinic.war"
