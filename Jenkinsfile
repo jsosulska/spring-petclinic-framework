@@ -8,6 +8,11 @@ pipeline {
             }
         }
         // Build Docker image
+        stage('Build Docker Image') {
+            steps {
+                sh 'oc start-build spring-petclinic-framework'
+            }
+        }
         // push docker image to OCR with latest
     }
 }
