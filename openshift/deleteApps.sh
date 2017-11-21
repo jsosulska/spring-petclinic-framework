@@ -5,6 +5,9 @@ oc login -u developer -p $(oc whoami -t)
 APP_SVC_NAME=petclinic
 DB_SV_NAME=$APP_SVC_NAME-mysql
 
+# set projectname
+oc project myproject
+
 # delete all portions of application
 oc delete dc/$APP_SVC_NAME
 oc delete svc/$APP_SVC_NAME

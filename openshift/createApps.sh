@@ -6,6 +6,9 @@ oc login -u developer -p $(oc whoami -t)
 APP_SVC_NAME=petclinic
 DB_SV_NAME=$APP_SVC_NAME-mysql
 
+# set projectname
+oc project myproject
+
 # create mySql service
 MYSQL_PASSWORD=$(openssl rand -base64 12)
 oc new-app -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=$MYSQL_PASSWORD -e MYSQL_DATABASE=petclinic --image-stream=myproject/mysql-55-centos7 --name $DB_SV_NAME
