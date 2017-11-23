@@ -4,7 +4,7 @@ pipeline {
         stage('Build image') {
             agent any
             steps {
-              sh 'oc start-build test --'
+              sh 'oc start-build test --wai'
             }
         }
     }
